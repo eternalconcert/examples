@@ -1,0 +1,10 @@
+#!/usr/bin/make
+
+all:
+	gcc -c c.c -o objects/c.o
+	rustc --crate-type=lib src/port.rs -o objects/rust.o
+	gcc objects/c.o -L objects/rust.o -o linked.bin -Wl,--gc-sections -lpthread
+
+clean:
+	rm objects/*
+	rm linked.bin

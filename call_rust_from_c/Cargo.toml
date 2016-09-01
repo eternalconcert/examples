@@ -1,0 +1,11 @@
+[package]
+name = "port"
+version = "0.1.0"
+authors = ["Desktop <1@2.de>"]
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+x86 = "*"
+libc = "0.2.0"
